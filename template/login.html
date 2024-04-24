@@ -1,0 +1,91 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-div">
+        <form method="post">
+        <h2 class="hede">Todo</h2>
+            {% csrf_token %}
+            <label class="txt">Username</label><br>
+            <input class="input1" type="text" placeholder="Enter your username" name="username"><br><br>
+            <label class="txt">Password</label><br>
+            <input class="input1" type="password" placeholder="Password" name="password"><br><br>
+            <input class="login" type="submit" value="Login">
+        </form>
+        </div>
+        <div class="reg-div">Don't have an account &nbsp <a href="{% url 'reg'%}"> Register</a>
+        </div>
+    </div>
+</body>
+</html>
+<style>
+    .hede{
+        font-style: italic;
+        font-size: 50px;
+    }
+    .reg-div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70%;
+        left: 24%;
+        height: 40px;
+        position: absolute;
+        top: 82%;
+    }
+    .login{
+        background-color: #059963;
+        padding: 12px 20px;
+        width: 300px;
+        border-radius:8px;
+        height: 55px;
+        color: white;
+        font-size: 120%;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .txt{
+        font-family:Arial, Helvetica, sans-serif;
+    }
+    .input1{
+        padding: 12px 20px;
+        width: 255px;
+        height: 25px;
+        border-radius: 8px;
+        border: 1px solid grey;
+    }
+
+    .form-div{
+        display: flex;
+        gap: 100px;
+        width: 330px;
+        height: 100px;
+        position: absolute;
+        top: 10%;
+        left: 10%;
+    }
+    .img-div{
+        position: absolute;
+        left: 40px;
+        width: 50%;
+        height: 60px;
+    }
+    *{
+        padding:0;
+        margin: 0;
+    }
+.container{
+        position: absolute;
+        left: 37%;
+        top: 150px;
+        width: 25%;
+        height: 390px;
+        border-radius: 10px;
+        background-color:#f4f4f4;
+}
+</style>

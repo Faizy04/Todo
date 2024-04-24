@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Management System</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        text-align: center;
+    }
+    .button-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .button {
+        padding: 10px 20px;
+        border: none;
+        background-color: #4caf50;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin: 0 10px;
+        transition: background-color 0.3s ease;
+        margin-top: 20px;
+    }
+    .button2{
+        padding: 10px 20px;
+        border: none;
+        background-color: #af0e0e;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin: 0 10px;
+        transition: background-color 0.3s ease;
+
+    }
+    .button:hover {
+        background-color: #45a049;
+    }
+    select {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Todo Project</h1>
+    
+    <div class="button-container">
+        <a href="{% url 'createproject'%}">
+        <button class="button" >Create a New Project</button>
+    </a>
+    <a href="{% url 'listproject'%}">
+        <button class="button" >List All Projects</button>
+    </a>
+    <a href="{%url 'viewproject'%}">
+        <button class="button" >View a Project</button>
+    </a>
+    <a href="{%url 'listtodo'%}">
+        <button class="button" >List All Todos</button>
+    </a>
+    <a href="{%url 'logout'%}">
+        <button class="button2">Logout</button>
+    </a>
+    </div>
+
+</div>
+
+<!-- JavaScript could go here to handle button clicks -->
+
+</body>
+</html>

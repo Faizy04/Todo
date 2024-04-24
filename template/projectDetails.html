@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #b9b9b9;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+
+    h2 {
+      color: #666;
+    }
+
+    .todo-item {
+      margin-bottom: 10px;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    label {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      padding: 5px;
+      background-color: #fff;
+      border-radius: 5px;
+    }
+
+    ul li:hover {
+      background-color: #f0f0f0;
+    }
+    .container{
+        background-color: white;
+        width: 50%;
+        margin-left: 25%;
+        margin-top: 100px;
+        padding: 20px;
+    }
+    .button {
+        padding: 10px 20px;
+        border: none;
+        background-color: #4caf50;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin: 0 10px;
+        transition: background-color 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+    <div class="container">
+        <a href="{%url 'listtodo'%}">
+            <button class="button">List and Edit todos</button>
+        </a>
+
+        <h1>{{ project.title }}</h1>
+        <p>Summery : {{ total_completed_todos }} / {{ total_todos }}</p>
+
+        <h2>Pending Todos:</h2>
+        <ul>
+          {% for todo in pending_todos %}
+          <li class="todo-item">
+            <input type="checkbox" id="todo{{ todo.id }}" />
+            <label for="todo{{ todo.id }}">{{ todo.description }}</label>
+          </li>
+          {% endfor %}
+        </ul>
+      
+        <h2>Completed Todos:</h2>
+        <ul>
+          {% for todo in completed_todos %}
+          <li class="todo-item">
+            <input type="checkbox" id="todo{{ todo.id }}" checked disabled />
+            <label for="todo{{ todo.id }}">{{ todo.description }}</label>
+          </li>
+          </li>
+          {% endfor %}
+        </ul>
+    </div>
+
+
+  <!-- Display total number of todos and completed todos -->
+
+
+</body>
+</html>
